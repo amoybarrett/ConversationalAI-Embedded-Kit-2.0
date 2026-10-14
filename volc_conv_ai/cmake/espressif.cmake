@@ -36,7 +36,7 @@ endif()
 idf_component_register(
     SRCS ${VOLC_SRCS}
     INCLUDE_DIRS ${VOLC_INCS}
-    REQUIRES mbedtls  json lwip esp_netif
+    REQUIRES mbedtls espressif__cjson lwip esp_netif
 )
 
 if(CONFIG_VOLC_RTC_MODE)
@@ -45,7 +45,7 @@ if(CONFIG_VOLC_RTC_MODE)
     # Add prebuilt library for RTC mode
     add_prebuilt_library(volc_engine_rtc_lite 
         "${CMAKE_CURRENT_LIST_DIR}/../src/transports/high_quality/third_party/volc_rtc_engine_lite/libs/${CONFIG_IDF_TARGET}/libVolcEngineRTCLite.a"
-        REQUIRES mbedtls espressif__zlib json lwip)
+        REQUIRES mbedtls espressif__zlib espressif__cjson lwip)
     target_link_libraries(${COMPONENT_LIB} INTERFACE volc_engine_rtc_lite)
 endif()
 
