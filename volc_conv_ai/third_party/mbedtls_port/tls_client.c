@@ -139,7 +139,9 @@ int mbedtls_client_context(MbedTLSSession *session)
 
   mbedtls_ssl_conf_authmode(&session->conf, MBEDTLS_SSL_VERIFY_REQUIRED);
   mbedtls_ssl_conf_ca_chain(&session->conf, &session->cacert, NULL);
+#if MBEDTLS_VERSION_MAJOR < 4
   mbedtls_ssl_conf_rng(&session->conf, mbedtls_ctr_drbg_random, &session->ctr_drbg);
+#endif
 
   mbedtls_ssl_conf_dbg(&session->conf, _ssl_debug, NULL);
 

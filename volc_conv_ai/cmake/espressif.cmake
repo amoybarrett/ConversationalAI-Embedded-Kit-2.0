@@ -36,7 +36,7 @@ endif()
 idf_component_register(
     SRCS ${VOLC_SRCS}
     INCLUDE_DIRS ${VOLC_INCS}
-    REQUIRES mbedtls espressif__cjson lwip esp_netif
+    REQUIRES mbedtls esp_hw_support esp_rom espressif__cjson lwip esp_netif
 )
 
 if(CONFIG_VOLC_RTC_MODE)

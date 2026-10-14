@@ -6,11 +6,13 @@ set(VOLC_CONV_AI_SRCS "${CMAKE_CURRENT_LIST_DIR}/../src/volc_conv_ai.c"
                 "${CMAKE_CURRENT_LIST_DIR}/../src/util/volc_json.c"
                 "${CMAKE_CURRENT_LIST_DIR}/../third_party/mbedtls_port/tls_certificate.c"
                 "${CMAKE_CURRENT_LIST_DIR}/../third_party/mbedtls_port/tls_client.c"
+                "${CMAKE_CURRENT_LIST_DIR}/../third_party/mbedtls_port/entropy_compat.c"
                 "${CMAKE_CURRENT_LIST_DIR}/../third_party/webclient/src/webclient.c"
                 CACHE INTERNAL "ConversationalAI-Embedded-Kit-2.0 common src file")
 
 set(VOLC_CONV_AI_INCS "${CMAKE_CURRENT_LIST_DIR}/../inc"
                 "${CMAKE_CURRENT_LIST_DIR}/../src"
+                "${CMAKE_CURRENT_LIST_DIR}/../third_party/mbedtls_port/compat"
                 "${CMAKE_CURRENT_LIST_DIR}/../third_party/mbedtls_port"
                 "${CMAKE_CURRENT_LIST_DIR}/../third_party/webclient/inc"
                 CACHE INTERNAL "ConversationalAI-Embedded-Kit-2.0 common include dir")
