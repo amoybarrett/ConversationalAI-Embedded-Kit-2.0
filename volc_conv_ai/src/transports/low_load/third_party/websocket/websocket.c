@@ -684,7 +684,7 @@ static int _ssl_write(volc_ws_client_t* client, const char* buffer, int len) {
 			write_len = MBEDTLS_SSL_OUT_CONTENT_LEN;
 		}
 		if (len > MBEDTLS_SSL_OUT_CONTENT_LEN) {
-			LOGE("Fragmenting data of excessive size :%d, offset: %d, size %d\r\n", len, written, write_len);
+			LOGD("Fragmenting data of excessive size :%d, offset: %d, size %d\r\n", len, written, write_len);
 		}
 		ssize_t ret = mbedtls_ssl_write(&client->ssl->ssl, (unsigned char*) buffer + written, write_len);
 		if (ret < 0) {
